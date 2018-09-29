@@ -2,6 +2,8 @@ package com.xxl.job.core.biz.model;
 
 import java.io.Serializable;
 
+import com.alibaba.fastjson.JSON;
+
 /**
  * common return
  * @author xuxueli 2015-12-4 16:32:31
@@ -51,7 +53,7 @@ public class ReturnT<T> implements Serializable {
 
 	@Override
 	public String toString() {
-		return "ReturnT [code=" + code + ", msg=" + msg + ", content=" + content + "]";
+		return JSON.toJSONString(this);
 	}
 
 }

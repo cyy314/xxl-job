@@ -2,6 +2,8 @@ package com.xxl.job.admin.core.model;
 
 import java.util.Date;
 
+import com.alibaba.fastjson.JSON;
+
 /**
  * xxl-job info
  *
@@ -197,6 +199,11 @@ public class XxlJobInfo {
 
 	public void setJobStatus(String jobStatus) {
 		this.jobStatus = jobStatus;
+	}
+	
+	@Override
+	public String toString() {
+		return JSON.toJSONString(this);
 	}
 
 }

@@ -130,7 +130,11 @@ public class XxlJobServiceImpl implements XxlJobService {
         try {
             XxlJobDynamicScheduler.addJob(qz_name, qz_group, jobInfo.getJobCron());
             //XxlJobDynamicScheduler.pauseJob(qz_name, qz_group);
-            return ReturnT.SUCCESS;
+            /**
+             * 获取job添加成功的完整信息
+             */
+            //return ReturnT.SUCCESS;
+            return new ReturnT<String>(jobInfo.toString());
         } catch (SchedulerException e) {
             logger.error(e.getMessage(), e);
             try {
